@@ -12,20 +12,6 @@ Original file is located at
 #from google.colab import drive
 #drive.mount('/content/drive')
 
-"""#1.Import Library
-#ini perubahan
-
-
-"""
-
-
-#pip install varname
-#pip install keras-metrics
-#pip install h5py
-# pip instll varname
-# pip installa keras-metrics
-# pip install h5py
-
 import nltk
 import pandas as pd
 import re
@@ -36,10 +22,9 @@ import io
 import gensim
 import numpy as np
 import matplotlib.pyplot as plt
-import keras_metrics as km
-import pickle
 import keras
- 
+import keras_metrics as km
+
 from tensorflow import keras
 from keras.models import Sequential
 from keras.optimizers import Adam
@@ -67,8 +52,8 @@ from varname import nameof
 """#2.Load Data"""
 
 #simpan path dataset
-path_data_aspek = "/content/drive/My Drive/Thesis/Tesis/program/data/dataset/dataset_aspek.csv"
-path_data_sentimen = "/content/drive/My Drive/Thesis/Tesis/program/data/dataset/dataset_sentimen.csv"
+path_data_aspek = dataset_aspek.csv
+path_data_sentimen = dataset_sentimen.csv
  
 #read dataset
 data_aspek = pd.read_csv(path_data_aspek, sep=";", header=[0], encoding="UTF-8")
@@ -120,7 +105,7 @@ data_tokenize[:10]
 """##3.4. Konversi Slangword"""
 
 #slang word
-path_dataslang = open("/content/drive/My Drive/Thesis/Tesis/program/data/dataset/kamus kata baku-clear.csv")
+path_dataslang = open(kamus kata baku-clear.csv)
 dataslang = pd.read_csv(path_dataslang, encoding = 'utf-8', header=None, sep=";")
 
 def replaceSlang(word):
