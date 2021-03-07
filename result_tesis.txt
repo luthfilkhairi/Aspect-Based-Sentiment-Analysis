@@ -1,2 +1,5 @@
-srun: error: komputasi03: task 0: Exited with exit code 13
-slurmstepd: error: execve(): program_tesis_luthfil.py: Permission denied
+  File "program_tesis_luthfil.py", line 21
+    pip install varname
+              ^
+SyntaxError: invalid syntax
+srun: error: komputasi03: task 0: Exited with exit code 1
