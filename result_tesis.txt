@@ -1,0 +1,2 @@
+srun: error: komputasi03: task 0: Exited with exit code 13
+slurmstepd: error: execve(): program_tesis_luthfil.py: Permission denied
