@@ -18,9 +18,9 @@ Original file is located at
 
 """
 
-pip install varname
-pip install keras-metrics
-pip install h5py
+#pip install varname
+#pip install keras-metrics
+#pip install h5py
 
 import nltk
 import pandas as pd
