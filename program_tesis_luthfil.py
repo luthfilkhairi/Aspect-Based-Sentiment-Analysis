@@ -52,8 +52,8 @@ from varname import nameof
 """#2.Load Data"""
 
 #simpan path dataset
-path_data_aspek = dataset_aspek.csv
-path_data_sentimen = dataset_sentimen.csv
+path_data_aspek = 'dataset_aspek.csv'
+path_data_sentimen = 'dataset_sentimen.csv'
  
 #read dataset
 data_aspek = pd.read_csv(path_data_aspek, sep=";", header=[0], encoding="UTF-8")
@@ -105,7 +105,7 @@ data_tokenize[:10]
 """##3.4. Konversi Slangword"""
 
 #slang word
-path_dataslang = open(kamus kata baku-clear.csv)
+path_dataslang = open('kamus kata baku-clear.csv')
 dataslang = pd.read_csv(path_dataslang, encoding = 'utf-8', header=None, sep=";")
 
 def replaceSlang(word):
@@ -196,43 +196,6 @@ padding[:20]
 
 # #Baca Korpus Wikipedia Indonesia
 
-
-# if __name__ == '__main__':
-  
-#     start_time = time.time()
-#     print('Streaming wiki...')
-#     id_wiki = gensim.corpora.WikiCorpus('/content/drive/My Drive/Thesis/Tesis/program/data/model/word_embedding/idwiki-latest-pages-articles.xml.bz2', lemmatize=False, dictionary={})
-#     article_count = 0
-
-#     with io.open('/content/drive/My Drive/Thesis/Tesis/program/data/model/word_embedding/idwiki.txt', 'w', encoding='utf-8') as wiki_txt:
-#         for text in id_wiki.get_texts():
-
-#             wiki_txt.write(" ".join(text) + '\n')
-#             article_count += 1
-
-#             if article_count % 10000 == 0:
-#                 print('{} articles processed'.format(article_count))
-
-#         print('total: {} articles'.format(article_count))
-
-#     finish_time = time.time()
-#     print('Elapsed time: {}'.format(timedelta(seconds=finish_time-start_time)))
-
-# #Pembuatan Model Word2Vec
-
-# start_time = time.time()
-# print('Training Word2Vec Model...')
-# sentences = word2vec.LineSentence('/content/drive/My Drive/Thesis/Tesis/program/data/model/word_embedding/idwiki.txt')
-# id_w2v = word2vec.Word2Vec(sentences, size=300, window = 10, sg = 0,  min_count = 5, workers=multiprocessing.cpu_count()-1)
-# id_w2v.save('/content/drive/My Drive/Thesis/Tesis/program/data/model/word_embedding/skip_gram/word2vec_skipgram_300.model')
-# finish_time = time.time()
-
-# print('Finished. Elapsed time: {}'.format(timedelta(seconds=finish_time-start_time)))
-
-#Panggil model word2vec
-# model_w2v = gensim.models.Word2Vec.load('/content/drive/My Drive/Thesis/Tesis/program/data/model/word_embedding/CBOW/word2vec_cbow_300.model')
-# model_w2v["prabowo"]
-
 """#6.Implementasi LSTM (Klasifikasi Aspek)"""
 
 #Panggil Data target aspek (y)
@@ -250,8 +213,8 @@ data_sentimen_kontinuitas = data_sentimen['kontinuitas']
 
 """## 6.1.Split dataset"""
 
-X_train, X_test, y_train, y_test = train_test_split(padding, data_aspek_empati, test_size=0.2)
-nama_aspek = nameof(data_aspek_empati)
+X_train, X_test, y_train, y_test = train_test_split(padding, data_aspek_integritas, test_size=0.2)
+nama_aspek = nameof(data_aspek_integritas)
 y_train_tr = to_categorical(y_train, num_classes=2)
 y_test_tr = to_categorical(y_test, num_classes=2)
 print (X_train.shape, y_train_tr.shape)
@@ -267,18 +230,6 @@ kf = StratifiedKFold(n_splits=5)#,shuffle=True, random_state=None) # Define the 
 # skf = StratifiedKFold(n_splits=3)
 kf.get_n_splits(X_train) # returns the number of splitting iterations in the cross-validator
 print(kf)
-
-fold_no = 1
-for train_index, test_index in kf.split(x_aspek, y_aspek):
-  train = train_index
-  test = test_index
-  print('Fold',str(fold_no),'Class Ratio:',sum(y_aspek)/len(y_aspek))
-  fold_no += 1
-
-for train_index, test_index in kf.split(x_aspek, y_aspek):
-    print("TRAIN:", train_index, "TEST:", test_index)
-    print("panjang train", len(train_index))
-    print("panjang test", len(test_index))
 
 """##6.3. Embedding Layer (konversi hasil padding menjadi vektor)"""
 

@@ -6,6 +6,10 @@ appdirs==1.4.4
 argon2-cffi==20.1.0
 asgiref==3.3.1
 astor==0.8.1
+<<<<<<< HEAD
+=======
+astropy==4.2.0
+>>>>>>> 1a46a476f3ceb32ce22e8b58a5b5a5c35351b532
 astunparse==1.6.3
 async-generator==1.10
 atari-py==0.2.6
