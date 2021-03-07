@@ -1,5 +1,5 @@
-  File "program_tesis_luthfil.py", line 21
-    pip install varname
-              ^
-SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "program_tesis_luthfil.py", line 30, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
 srun: error: komputasi03: task 0: Exited with exit code 1
