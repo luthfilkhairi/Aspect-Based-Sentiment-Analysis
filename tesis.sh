@@ -3,7 +3,6 @@
 #SBATCH --job-name=tesis
 #SBATCH --output=result_tesis.txt
 #
-#SBATCH --nodelist=komputasi04
 #SBATCH --nodes=1
 #SBATCH --time=24:00:00
 

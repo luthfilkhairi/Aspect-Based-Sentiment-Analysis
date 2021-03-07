@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "program_tesis_luthfil.py", line 25, in <module>
-    import nltk
-ModuleNotFoundError: No module named 'nltk'
-srun: error: komputasi04: task 0: Exited with exit code 1
+  File "program_tesis_luthfil.py", line 30, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+srun: error: komputasi03: task 0: Exited with exit code 1
