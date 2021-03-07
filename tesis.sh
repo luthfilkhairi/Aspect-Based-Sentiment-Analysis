@@ -6,4 +6,4 @@
 #SBATCH --nodes=1
 #SBATCH --time=10:00
 
-srun program_tesis_luthfil.py
+srun python3 program_tesis_luthfil.py
